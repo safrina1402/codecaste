@@ -13,6 +13,10 @@ co = cohere.Client(COHERE_API_KEY)
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Fix My Code API!"}
+
 class CodeRequest(BaseModel):
     language: str
     code: str
